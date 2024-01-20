@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>GitHub User and Repositories</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="user-info" id="userInfo">
+        <!-- User information will be displayed here -->
+      </div>
+      <br>
+      <div class="options">
+        <input type="text" id="search" placeholder="Enter repository name" />
+        <button onclick="fetchData()">Search</button>
+      </div>
+      <div id="loader" class="loader"></div>
+      <div id="repositories" class="repositories"></div>
+
+      <!-- Pagination controls -->
+      <div class="pagination">
+        <button id="prevPage" onclick="changePage(-1)">Previous</button>
+        <span id="currentPage">1</span>
+        <button id="nextPage" onclick="changePage(1)">Next</button>
+      </div>
+
+      <div class="options">
+        <label for="perPage">Repositories per page:</label>
+        <select id="perPage" onchange="fetchData()">
+          <option value="10" selected>10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
